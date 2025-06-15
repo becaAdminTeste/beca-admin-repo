@@ -1,0 +1,15 @@
+
+[
+    {"textName": "maria da conceição pereira" },
+    { "icon": "description", "title": "Nome", "text": "maria da conceição pereira" },
+    { "icon": "phone", "title": "Telefone", "text": "(51) 99999-9999" },
+    { "icon": "mail", "title": "E-mail", "text": "mconceicaop@gmail.com" },
+    { "icon": "home", "title": "Endereço", "text": "Av. Chui 1499, ap 10, Cristal, Porto Alegre, RS" },
+    { "icon": "summarize", "title": "solicitações", "list": ["Direito Trabalista"] },
+    { "icon": "pix", "title": "Chave pix", "text": "51999999999" },
+    { "icon": "verified", "title": "Verificado", "text": "12 mar 2024" },
+    { "icon": "summarize", "title": "Indicações", "text": "2 Ativos / 3 Indicações" },
+    { "icon": "savings", "title": "Total", "text": "R$45,00" },
+    { "icon": "payments", "title": "Disponivel", "text": "R$15,00" },
+    { "icon": "money", "title": "Sacado", "text": "R$30,00" }
+]

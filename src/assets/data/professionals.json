@@ -1,0 +1,6 @@
+[
+    { "title": "Total de Profissionais", "digit": "100", "icon": "pending", "variant": "lg blue" }, 
+    { "title": "Profissionais Ativos", "digit": "75", "icon": "check_circle", "variant": "lg green" },
+    { "title": "Profissionais Pendentes", "digit": "100", "icon": "pending", "variant": "lg purple" }, 
+    { "title": "Profissionais Inativos / Bloqueados", "digit": "25", "icon": "remove_circle", "variant": "lg red" }
+]

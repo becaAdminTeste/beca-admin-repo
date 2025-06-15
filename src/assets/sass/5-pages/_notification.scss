@@ -1,0 +1,125 @@
+.mc-notify-item {
+    @include flex-dimension(flex-start, space-between, 0px);
+    padding: 20px 5px;
+    border-bottom: 1px solid var(--lightBorder);
+
+
+    &:first-child { padding-top: 0px; }
+    &:last-child { border-bottom: none; }
+}
+
+.mc-notify-content {
+    padding: 0px 10px 0px 10px;
+    display: flex;
+    gap: 10px;
+    color: var(--textColor);
+
+    &:hover { color: var(--textColor); }
+
+    @include custom-breakpoint(0px, 450px) {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+.mc-notify-name {
+font-size: 16px;
+font-weight: bold;
+color: var(--textColor);
+}
+
+.mc-notify-longmoment {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--textColor);
+    }
+
+.mc-notify-valor {
+    margin-top: 1rem;
+    width: 24%;
+    position: initial;
+    color: var(--blueRGB);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.mc-notify-pix {
+    margin-top: 1.8%;
+    padding-left: 6%;
+    width: 25%;
+    color: var(--blueRGB);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.mc-notify-media {
+    position: relative;
+
+    img {
+        width: 60px;
+        border-radius: 50%;
+    }
+
+    i {
+        @include content-center(35px, 30px, 50%);
+        border: 2px solid var(--lightBorder);
+        color: var(--lightColor);
+        font-size: 18px;
+        position: absolute;
+        top: 30px;
+
+        &.bloqueado { background: rgba(var(--redRGB), 75%); }
+        &.inativo { background: rgba(var(--yellowRGB), 75%); }
+        &.ativo { background: rgba(var(--greenRGB), 75%); }
+        &.pendente { background: rgba(var(--greenRGB), 75%); }
+        &.blog { background: rgba(var(--purpleRGB), 75%); }
+        &.privacy { background: rgba(var(--primaryRGB), 75%); }
+    }
+}
+
+[dir="ltr"] {
+    .mc-notify-media {
+        i {
+            right: -5px;
+        }
+    }
+}
+
+[dir="rtl"] {
+    .mc-notify-media {
+        i {
+            left: -5px;
+        }
+    }
+}
+
+.mc-notify-meta {
+    position: relative;
+
+    span {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        
+        b { font-weight: 500; }
+    }
+
+    small {
+        display: block;
+    }
+}
+
+.mc-notify-indicator {
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+.mc-notify-close {
+    margin-top: 5px;
+    color: var(--textColor);
+    @include transition-linear;
+
+    &:hover {
+        color: var(--primaryHEX);
+    }
+}

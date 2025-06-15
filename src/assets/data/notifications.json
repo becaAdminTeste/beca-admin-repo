@@ -1,0 +1,52 @@
+[
+    {
+        "path": "#",
+        "isActive": true,
+        "type": "ativo",
+        "notify": { "image": "images/avatar/01.webp", "variant": "yellow", "icon": "campaign" },
+        "note": "Acabou de fazer uma indicação",
+        "name": "Usuário 1",
+        "indicated": "Cliente 1",
+        "longMoment": "Há Poucos Segundos"
+    },
+    {
+        "path": "#",
+        "type": "inativo",
+        "isActive": true,
+        "notify": { "image": "images/avatar/02.webp", "variant": "yellow", "icon": "campaign" },
+        "note": "Acabou de fazer uma indicação",
+        "name": "Usuário 2",
+        "indicated": "Cliente 2",
+        "longMoment": "Há 25 Minutos"
+    },
+    {
+        "path": "#",
+        "type": "bloqueado",
+        "isActive": true,
+        "notify": { "image": "images/avatar/03.webp", "variant": "yellow", "icon": "campaign" },
+        "note": "Acabou de fazer uma indicação",
+        "name": "Usuário 3",
+        "indicated": "Cliente 3",
+        "longMoment": "Há 12 Horas"
+    },
+    {
+        "path": "#",
+        "type": "ativo",
+        "isActive": true,
+        "notify": { "image": "images/avatar/04.webp", "variant": "yellow", "icon": "campaign" },
+        "note": "Acabou de fazer uma indicação",
+        "name": "Usuário 4",
+        "indicated": "Cliente 4",
+        "longMoment": "Há 4 Dias"
+    },
+    {
+        "path": "#",
+        "type": "ativo",
+        "isActive": false,
+        "notify": { "image": "images/avatar/05.webp", "variant": "yellow", "icon": "campaign" },
+        "note": "Acabou de fazer uma indicação",
+        "name": "Usuário 5",
+        "indicated": "Cliente 5",
+        "longMoment": "Há 1 Semana"
+    }
+]

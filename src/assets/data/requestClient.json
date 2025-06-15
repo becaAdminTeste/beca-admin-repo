@@ -1,0 +1,62 @@
+[
+    {
+        "path": "#",
+        "isActive": true,
+        "type": "ativo",
+        "notify": { "image": "images/avatar/01.webp", "variant": "red", "icon": "campaign" },
+        "name": "Mahmudul",
+        "note": "Acabou de fazer uma solicitação de saque",
+        "longMoment": "Há Poucos Segundos",
+        "value": "R$150,00 / R$300,00",
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00"
+    },
+    {
+        "path": "#",
+        "type": "inativo",
+        "isActive": true,
+        "notify": { "image": "images/avatar/02.webp", "variant": "green", "icon": "campaign" },
+        "name": "labonno",
+        "note": "Acabou de fazer uma solicitação de saque",
+        "longMoment": "Há 25 Minutos",
+        "value": "R$150,00 / R$300,00",
+        "pixkey": "xxxxxxx@gmail.com",
+        "document": "000.000.000-00"
+    },
+    {
+        "path": "#",
+        "type": "bloqueado",
+        "isActive": true,
+        "notify": { "image": "images/avatar/03.webp", "variant": "blue", "icon": "campaign" },
+        "name": "tahmina",
+        "note": "Acabou de fazer uma solicitação de saque",
+        "longMoment": "Há 12 Horas",
+        "value": "R$150,00 / R$300,00",  
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00"
+    },
+    {
+        "path": "#",
+        "type": "ativo",
+        "isActive": true,
+        "notify": { "image": "images/avatar/04.webp", "variant": "purple", "icon": "campaign" },
+        "name": "jubayer",
+        "note": "Acabou de fazer uma solicitação de saque",
+        "longMoment": "Há 4 Dias",
+        "value": "R$150,00 / R$300,00",
+        "pixkey": "xxxxxxx@gmail.com",
+        "document": "000.000.000-00"
+    },
+    {
+        "path": "#",
+        "type": "ativo",
+        "isActive": false,
+        "notify": { "image": "images/avatar/05.webp", "variant": "yellow", "icon": "campaign" },
+        "name": "rebeka",
+        "note": "Acabou de fazer uma solicitação de saque",
+        "longMoment": "Há 1 Semana",
+        "value": "R$150,00 / R$300,00",
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00"
+    }
+]

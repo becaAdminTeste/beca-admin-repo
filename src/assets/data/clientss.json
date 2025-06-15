@@ -1,0 +1,5 @@
+[
+    { "title": "Total de Clientes", "digit": "250", "icon": "pending", "variant": "lg blue" }, 
+    { "title": "Clientes Ativos", "digit": "150", "icon": "check_circle", "variant": "lg green" },
+    { "title": "Clientes Inativos / Bloqueados", "digit": "100", "icon": "remove_circle", "variant": "lg red" }
+]

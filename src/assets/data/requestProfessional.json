@@ -1,0 +1,67 @@
+[
+    {
+        "type": "rating",
+        "notify": { "image": "images/avatar/01.webp", "variant": "red", "icon": "campaign" },
+        "name": "Profissional 1",
+        "note": "Recebeu ultimo pagamento dia",
+        "longMoment": "05/05/24",
+        "value": "R$36,00",
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00",
+        "lastPayment": "05/05/24",
+        "nextPayment": "05/06/24",
+        "clients": 10
+    },
+    {
+        "type": "rating",
+        "notify": { "image": "images/avatar/02.webp", "variant": "green", "icon": "campaign" },
+        "name": "Profissional 2",
+        "note": "Recebeu ultimo pagamento dia",
+        "longMoment": "05/05/24",
+        "value": "R$36,00",
+        "pixkey": "xxxxxxx@gmail.com",
+        "document": "000.000.000-00",
+        "lastPayment": "05/05/24",
+        "nextPayment": "05/06/24",
+        "clients": 10
+    },
+    {
+        "type": "rating",
+        "notify": { "image": "images/avatar/03.webp", "variant": "blue", "icon": "campaign" },
+        "name": "Profissional 3",
+        "note": "Recebeu ultimo pagamento dia",
+        "longMoment": "05/05/24",
+        "value": "R$36,00",  
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00",
+        "lastPayment": "05/05/24",
+        "nextPayment": "05/06/24",
+        "clients": 10
+    },
+    {
+        "type": "rating",
+        "notify": { "image": "images/avatar/04.webp", "variant": "purple", "icon": "campaign" },
+        "name": "Profissional 4",
+        "note": "Recebeu ultimo pagamento dia",
+        "longMoment": "05/05/24",
+        "value": "R$36,00",
+        "pixkey": "xxxxxxx@gmail.com",
+        "document": "000.000.000-00",
+        "lastPayment": "05/05/24",
+        "nextPayment": "05/06/24",
+        "clients": 10
+    },
+    {
+        "type": "rating",
+        "notify": { "image": "images/avatar/05.webp", "variant": "yellow", "icon": "campaign" },
+        "name": "Profissional 5",
+        "note": "Recebeu ultimo pagamento dia",
+        "longMoment": "05/05/24",
+        "value": "R$36,00",
+        "pixkey": "(51)99999-9999",
+        "document": "000.000.000-00",
+        "lastPayment": "05/05/24",
+        "nextPayment": "05/06/24",
+        "clients": 10
+    }
+]

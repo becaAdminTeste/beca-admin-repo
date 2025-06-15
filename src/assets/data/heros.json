@@ -1,0 +1,34 @@
+[
+    { 
+        "icon": "account_circle", 
+        "trend": "trending_up", 
+        "title": "Total de Usuários", 
+        "variant": "blue", 
+        "number": 277, 
+        "percent": 95 
+    },
+    { 
+        "icon": "shopping_cart", 
+        "trend": "trending_up", 
+        "title": "Total de Profissionais",
+        "variant": "green", 
+        "number": 338, 
+        "percent": 30 
+    },
+    { 
+        "icon": "shopping_bag", 
+        "trend": "trending_up", 
+        "title": "Total de Serviços", 
+        "variant": "purple", 
+        "number": 557, 
+        "percent": 25 
+    },
+    { 
+        "icon": "hotel_class", 
+        "trend": "trending_up", 
+        "title": "Total de Indicações", 
+        "variant": "yellow", 
+        "number": 166, 
+        "percent": 45 
+    }
+]

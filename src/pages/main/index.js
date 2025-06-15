@@ -1,0 +1,11 @@
+export { default as EcommercePage } from "./Dashboard";
+export { default as UserListPage } from "./UserListPage";
+export { default as ProfessionalPage } from "./ProfessionalListPage";
+export { default as MyAccountPage } from "./MyAccountPage";
+export { default as RequestClientPage } from "./RequestClientPage";
+export { default as ClientViewPage } from "./UserViewPage";
+export { default as ProfessionalViewPage } from "./ProfessionalViewPage";
+export { default as IndicationPage } from "./IndicationPage";
+export { default as ClientEditPage } from "./UserEditPage";
+export { default as ProfessionalEditPage } from "./ProfessionalEditPage";
+export { default as CreateUsers } from "./CreateUsers";

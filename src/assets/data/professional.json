@@ -1,0 +1,161 @@
+{
+    "thead": ["Nome", "Função", "Documento", "Email", "Clientes", "UF", "Telefone", "Status", "Criado em", "Ação"],
+    "tbody": [
+        {
+            "role": { "icon": "settings", "text": "Admin" },
+            "src": "images/avatar/01.webp",
+            "name": "Germano", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "0",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        {  
+            "role": { "icon": "engineering", "text": "Desenvolvedor" },
+            "src": "images/avatar/06.webp",
+            "name": "Marcelo Moura", 
+            "document": "000.000.000-00", 
+            "email": "labonno@gmail.com", 
+            "Clients": "0",
+            "phone": "(51) 99999-9999", 
+            "status": "pending",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "engineering", "text": "Desenvolvedor" },
+            "src": "images/avatar/04.webp",
+            "name": "Nathan Smith", 
+            "document": "000.000.000-00", 
+            "email": "tahmina@gmail.com", 
+            "Clients": "0",
+            "phone": "(51) 99999-9999", 
+            "status": "blocked",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "engineering", "text": "Desenvolvedor" },
+            "src": "images/avatar/08.webp",
+            "name": "Jordhan Garibotti", 
+            "document": "000.000.000-00", 
+            "email": "shariful@gmail.com", 
+            "Clients": "0",
+            "phone": "(51) 99999-9999", 
+            "status": "inactive",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/08.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/08.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "Roberto Dias da Silva", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/06.webp",
+            "name": "penultimo", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        },
+        { 
+            "role": { "icon": "verified", "text": "Profissional" },
+            "src": "images/avatar/08.webp",
+            "name": "ultimo", 
+            "document": "000.000.000-00", 
+            "email": "Drroberto@Gmail.Com", 
+            "Clients": "21",
+            "phone": "(51) 99999-9999", 
+            "status": "active",
+            "created": "15/06/2022",
+            "action": { "edit": "edit", "block": "block", "view": "visibility" }
+        }
+    ]
+}
