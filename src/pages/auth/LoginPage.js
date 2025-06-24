@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import IconFieldComponent from "../../components/fields/IconFieldComponent";
 import LogoComponent from "../../components/LogoComponent";
@@ -39,6 +39,7 @@ export default function LoginPage() {
         password: data.password,
       });
       if (response.status === 200) {
+        console.log(response);
         const token = response.data.access_token;
         localStorage.setItem("token", token);
         setToken(token);
