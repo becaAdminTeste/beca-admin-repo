@@ -1,42 +1,11 @@
-import React, { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AnchorComponent } from "../../components/elements";
+import BASE_URL from "../../config";
 import PageLayout from "../../layouts/PageLayout";
-import users from "../../assets/data/specifics.json";
 
 export default function RequestClientPage() {
-  const [requests, setRequests] = useState(
-    users.filter((user) => user.type === "Usuário" && user.withdrawalDate)
-  );
-
-  const handleAcceptRequest = (event, index) => {
-    event.stopPropagation();
-    const updatedRequests = [...requests];
-    updatedRequests.splice(index, 1);
-    setRequests(updatedRequests);
-  };
-
-  const handleRejectRequest = (event, index) => {
-    event.stopPropagation();
-    const updatedRequests = [...requests];
-    updatedRequests.splice(index, 1);
-    setRequests(updatedRequests);
-  };
-
-  const calculateLongMoment = (timestamp) => {
-    const now = new Date();
-    const diffInSeconds = Math.floor((now - new Date(timestamp)) / 1000);
-
-    if (diffInSeconds < 60) {
-      return "a poucos segundos";
-    } else if (diffInSeconds < 3600) {
-      return "a alguns minutos";
-    } else if (diffInSeconds < 86400) {
-      return "a algumas horas";
-    } else {
-      return "a alguns dias";
-    }
-  };
+  const [payments, setPayments] = useState([]);
 
   const copyToClipboard = (text) => {
     navigator.clipboard
@@ -45,9 +14,43 @@ export default function RequestClientPage() {
         alert("Chave Pix copiada!");
       })
       .catch((err) => {
-        console.error("Erro ao copiar a chave Pix: ", err);
+        console.error(err);
+        alert("Ocorreu um erro tente novamente.");
       });
   };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/payment/by-indication`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      });
+      setPayments(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar os dados:", error);
+    }
+  };
+
+  const handleCheckClick = async (userId) => {
+    const response = await axios.post(
+      `${BASE_URL}/payment/update-by-indicator/${userId}`,
+      {},
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }
+    );
+
+    if (response.status === 200) {
+      fetchData();
+      alert("Status atualizado com sucesso!");
+      return;
+    }
+
+    alert("Ocorreu um erro ao atualizar o status, tente novamente mais tarde.");
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <PageLayout>
@@ -57,119 +60,102 @@ export default function RequestClientPage() {
           <ul className="mc-breadcrumb-list">
             <li className="mc-breadcrumb-item">
               <Link to="/home" className="mc-breadcrumb-link">
-                Inicio
+                Início
               </Link>
             </li>
             <li className="mc-breadcrumb-item">Solicitações</li>
           </ul>
         </div>
       </div>
-      <div className="mc-card">
+
+      <div className="mc-card" style={{ height: "70vh" }}>
         <div className="mc-card-header">
-          <h4 className="mc-card-title">Todas Solicitações de usuários</h4>
+          <h4 className="mc-card-title">Solicitações de profissionais</h4>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "0rem 30.5rem 0rem 0rem",
-          }}
-        >
-          <h4 style={{ width: 420 }}>Nome Usuário</h4>
-          <h4 style={{ marginLeft: 20 }}>Saque / Total</h4>
-          <h4 className="mc-card-title">Chave Pix</h4>
-          <h4 className="mc-card-title">Documento</h4>
-        </div>
-        <ul
-          style={{
-            backgroundColor: "#e6e6e61a",
-            paddingTop: 20,
-            borderRadius: 8,
-          }}
-          className="mc-notify-list"
-        >
-          {requests
-            .filter((notification) => notification.withdrawalDate)
-            .map((notification, index) => (
-              <li
-                className="mc-notify-item"
-                key={index}
-                onClick={() => copyToClipboard(notification.pix)}
-              >
-                <AnchorComponent className="mc-notify-content">
-                  <div className="mc-notify-media">
-                    <img src={notification.src} alt="alter" />
-                    <i className={`material-iconss ${notification.status}`}>
-                      "campaign"
-                    </i>
-                  </div>
-                  <div
-                    style={{
-                      width: 450,
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <small className="mc-notify-name">
-                      {notification.name}
-                    </small>
-                    <small>Acabou de fazer uma solicitação de saque</small>
-                    <small className="mc-notify-longmoment">
-                      {calculateLongMoment(notification.withdrawalDate)}
-                    </small>
-                    <small className="mc-notify-longmoment">
-                      {notification.status}
-                    </small>
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      fontWeight: "bold",
-                      marginTop: 23,
-                    }}
-                  >
-                    <div style={{ width: 230 }}>
-                      <small>
-                        {notification.widrouwMoney}/{notification.disponible}
-                      </small>
-                    </div>
-                    <div style={{ width: 190 }}>
-                      <small>{notification.pix}</small>
-                    </div>
-                    <div style={{ width: 170 }}>
-                      <small>{notification.document}</small>
-                    </div>
-                  </div>
-                </AnchorComponent>
-                <div
+
+        <div style={{ overflowX: "auto", height: "100%" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: `
+                minmax(200px, 2fr)
+                minmax(100px, 1fr)
+                minmax(150px, 1.5fr)
+                minmax(150px, 2fr)
+                auto
+              `,
+              minWidth: 1000,
+              fontWeight: "bold",
+              padding: "0 12px",
+              gap: 12,
+              marginTop: 12,
+            }}
+          >
+            <h4>Nome</h4>
+            <h4>Total</h4>
+            <h4>Documento</h4>
+            <h4>Pix</h4>
+            <div />
+          </div>
+
+          <ul
+            style={{
+              backgroundColor: "#e6e6e61a",
+              borderRadius: 8,
+              marginTop: 10,
+              padding: 0,
+              minWidth: 1000,
+            }}
+            className="mc-notify-list"
+          >
+            {payments.length === 0 ? (
+              <div style={{ padding: 24, textAlign: "center" }}>
+                Nenhum item encontrado.
+              </div>
+            ) : (
+              payments.map((payment) => (
+                <li
+                  className="mc-notify-item"
+                  key={payment.lawyerId}
+                  onClick={() => copyToClipboard(payment.pix)}
                   style={{
-                    display: "flex",
+                    display: "grid",
+                    gridTemplateColumns: `
+                      minmax(200px, 2fr)
+                      minmax(100px, 1fr)
+                      minmax(150px, 1.5fr)
+                      minmax(150px, 2fr)
+                      auto
+                    `,
+                    padding: "16px 12px",
+                    gap: 12,
                     alignItems: "center",
-                    gap: 30,
-                    marginRight: 20,
-                    marginTop: 20,
                   }}
                 >
-                  <button
-                    style={{ color: "#13cc13" }}
-                    className="material-icons"
-                    onClick={(event) => handleAcceptRequest(event, index)}
-                  >
-                    check
-                  </button>
-                  <button
-                    style={{ color: "#ff0000" }}
-                    className="material-icons"
-                    onClick={(event) => handleRejectRequest(event, index)}
-                  >
-                    close
-                  </button>
-                </div>
-              </li>
-            ))}
-        </ul>
+                  <small>{payment.userName}</small>
+                  <small>{payment.totalFormatted}</small>
+                  <small>{payment.document}</small>
+                  <small style={{ wordBreak: "break-word" }}>
+                    {payment.pix}
+                  </small>
+                  <div>
+                    <button
+                      style={{ color: "#13cc13" }}
+                      className="material-icons"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleCheckClick(payment.userId);
+                      }}
+                    >
+                      check
+                    </button>
+                  </div>
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
       </div>
     </PageLayout>
   );

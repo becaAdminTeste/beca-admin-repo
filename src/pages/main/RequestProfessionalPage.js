@@ -10,9 +10,8 @@ export default function RequestProfessionalPage() {
   function formatDateToBR(date) {
     const d = new Date(date);
     const day = String(d.getDate()).padStart(2, "0");
-    const month = String(d.getMonth() + 1).padStart(2, "0"); // meses começam em 0
+    const month = String(d.getMonth() + 1).padStart(2, "0");
     const year = d.getFullYear();
-
     return `${day}/${month}/${year}`;
   }
 
@@ -63,7 +62,7 @@ export default function RequestProfessionalPage() {
 
   return (
     <PageLayout>
-      <div className="mc-card ">
+      <div className="mc-card">
         <div className="mc-breadcrumb">
           <h3 className="mc-breadcrumb-title">Solicitações Saque</h3>
           <ul className="mc-breadcrumb-list">
@@ -87,15 +86,15 @@ export default function RequestProfessionalPage() {
             style={{
               display: "grid",
               gridTemplateColumns: `
-              minmax(180px, 1.5fr)
-              minmax(100px, 1.25fr)
-              minmax(150px, 1.5fr)
-              minmax(120px, 1.5fr)
-              minmax(80px, 1fr)
-              minmax(120px, 1.5fr)
-              minmax(120px, 1.5fr)
-              auto
-            `,
+                minmax(180px, 1.5fr)
+                minmax(100px, 1.25fr)
+                minmax(150px, 1.5fr)
+                minmax(120px, 1.5fr)
+                minmax(80px, 1fr)
+                minmax(120px, 1.5fr)
+                minmax(120px, 1.5fr)
+                auto
+              `,
               minWidth: 1200,
               fontWeight: "bold",
               padding: "0 12px",
@@ -123,52 +122,58 @@ export default function RequestProfessionalPage() {
             }}
             className="mc-notify-list"
           >
-            {payments.map((payment) => (
-              <li
-                className="mc-notify-item"
-                key={payment.lawyerId}
-                onClick={() => copyToClipboard(payment.lawyerPix)}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: `
-                  minmax(180px, 2fr)
-                  minmax(100px, 1fr)
-                  minmax(150px, 2fr)
-                  minmax(120px, 1.5fr)
-                  minmax(80px, 1fr)
-                  minmax(120px, 1.5fr)
-                  minmax(120px, 1.5fr)
-                  auto
-                `,
-                  padding: "16px 12px",
-                  gap: 12,
-                  alignItems: "center",
-                }}
-              >
-                <small>{payment.lawyerName}</small>
-                <small>{payment.totalAmount}</small>
-                <small style={{ wordBreak: "break-word" }}>
-                  {payment.lawyerPix}
-                </small>
-                <small>{payment.document}</small>
-                <small>{payment.totalService}</small>
-                <small>{formatDateToBR(payment.lastUpdate)}</small>
-                <small>{formatDateToBR(payment.nextUpdate)}</small>
-                <div style={{ display: "flex", gap: 16 }}>
-                  <button
-                    style={{ color: "#13cc13" }}
-                    className="material-icons"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      handleCheckClick(payment.lawyerId);
-                    }}
-                  >
-                    check
-                  </button>
-                </div>
-              </li>
-            ))}
+            {payments.length === 0 ? (
+              <div style={{ padding: 24, textAlign: "center" }}>
+                Nenhum item encontrado.
+              </div>
+            ) : (
+              payments.map((payment) => (
+                <li
+                  className="mc-notify-item"
+                  key={payment.lawyerId}
+                  onClick={() => copyToClipboard(payment.lawyerPix)}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: `
+                      minmax(180px, 2fr)
+                      minmax(100px, 1fr)
+                      minmax(150px, 2fr)
+                      minmax(120px, 1.5fr)
+                      minmax(80px, 1fr)
+                      minmax(120px, 1.5fr)
+                      minmax(120px, 1.5fr)
+                      auto
+                    `,
+                    padding: "16px 12px",
+                    gap: 12,
+                    alignItems: "center",
+                  }}
+                >
+                  <small>{payment.lawyerName}</small>
+                  <small>{payment.totalAmount}</small>
+                  <small style={{ wordBreak: "break-word" }}>
+                    {payment.lawyerPix}
+                  </small>
+                  <small>{payment.document}</small>
+                  <small>{payment.totalService}</small>
+                  <small>{formatDateToBR(payment.lastUpdate)}</small>
+                  <small>{formatDateToBR(payment.nextUpdate)}</small>
+                  <div style={{ display: "flex", gap: 16 }}>
+                    <button
+                      style={{ color: "#13cc13" }}
+                      className="material-icons"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleCheckClick(payment.lawyerId);
+                      }}
+                    >
+                      check
+                    </button>
+                  </div>
+                </li>
+              ))
+            )}
           </ul>
         </div>
       </div>
