@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://beca-api.onrender.com",
+  baseURL: "https://api.obeca.com.br",
 });
 
 export default api;
