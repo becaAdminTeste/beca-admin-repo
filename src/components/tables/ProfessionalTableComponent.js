@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Modal } from "react-bootstrap";
 import BASE_URL from "../../config";
 import {
@@ -31,12 +31,13 @@ export default function ProfessionalTableComponent({ thead, tbody, total }) {
   });
 
   const [professionalData, setProfessionalData] = useState();
-  const [professionalstatus, setProfessionalStatus] = useState("");
+  const [professionalstatus, setProfessionalStatus] = useState("ativo");
 
   const handleChangeStatus = async () => {
     try {
       await axios.patch(
         `https://api.obeca.com.br/user/update-status/user/${professionalData.id}/status/${professionalstatus}`,
+        {},
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -44,6 +45,7 @@ export default function ProfessionalTableComponent({ thead, tbody, total }) {
           },
         }
       );
+      setProfessionalStatus("ativo");
       setEditModal(false);
     } catch (error) {
       console.error("Erro ao atualizar perfil do usuário:", error);
