@@ -109,7 +109,9 @@ export default function ProfessionalTableComponent({ thead, tbody, total }) {
         item.statusId.toLowerCase().includes(lowercasedStatus) &&
         item.state.toLowerCase().includes(lowercasedUf)
     );
-    setFilteredData(filtered);
+    const ordered = data.filter((d) => filtered.includes(d));
+
+    setFilteredData(ordered);
   }, [effectiveSearch, data]);
 
   const itemsPerPage = 10;
